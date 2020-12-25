@@ -1,0 +1,28 @@
+{
+    "manifest_version": 2,
+    "name": "Compass Clock",
+    "version": "1.0.0",
+    "description": "A Beautiful Compass Clock",
+    "icons": {
+        "16": "pic/compass.png",
+        "48": "pic/compass.png",
+        "128": "pic/compass.png"
+    },
+    "browser_action": {
+        "default_icon": "pic/compass.png",
+        "default_title": "A Beautiful Compass Clock",
+        "default_popup": "popup.html"
+    },
+    "content_scripts": 
+	[
+		{
+            "matches": ["<all_urls>"],
+			"js": ["js/jquery.min.js", "js/clock.js"],
+			"css": ["css/clock.css"],
+			"run_at": "document_start"
+		}
+	],
+    "permissions": [
+        "tabs"
+    ]
+}
